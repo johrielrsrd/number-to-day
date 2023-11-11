@@ -4,10 +4,17 @@ public class NumberToDay {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        System.out.print("Please enter a day (1-7): ");
-        int day = scan.nextInt();
-        scan.close();
+        System.out.print("Please enter input (1-7): ");
 
+        if (!scan.hasNextInt()) {
+            System.out.print("Invalid!");
+        } else {
+            int day = scan.nextInt();
+            checkNumToDay(day);
+        }
+    }
+
+    public static void checkNumToDay(int day) {
         switch (day) {
             case 1:
                 System.out.println("The day is Monday.");
@@ -31,7 +38,7 @@ public class NumberToDay {
                 System.out.println("The day is Sunday.");
                 break;
             default:
-                System.out.println("Invalid input!");
+                System.out.println("Out of range!");
                 break;
         }
     }
